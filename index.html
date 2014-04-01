@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="CS488 Project - Animated Battle Scene : " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>CS488 Project - Animated Battle Scene</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/gyfelton/cs488-project-website">View on GitHub</a>
+
+          <h1 id="project_title">CS488 Project - Animated Battle Scene</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/gyfelton/cs488-project-website/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/gyfelton/cs488-project-website/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="animated-battle-scene-for-my-ipad-game" class="anchor" href="#animated-battle-scene-for-my-ipad-game"><span class="octicon octicon-link"></span></a>Animated Battle Scene for my iPad game</h1>
+
+<p>This project focuses on using a ray tracer to generate a series of images to animate a battle scene for my iPad game <a href="http://gyfelton.github.io/iPad-LearnEverything">"Dragon Match"</a>.
+Additional objectives are also included and explained below:</p>
+
+<h2>
+<a name="objective-1-model-the-scene-with-a-character-and-other-primitives-such-as-cylinder-and-torus" class="anchor" href="#objective-1-model-the-scene-with-a-character-and-other-primitives-such-as-cylinder-and-torus"><span class="octicon octicon-link"></span></a>Objective 1. Model the scene with a character and other primitives, such as cylinder and torus</h2>
+
+<h3>
+<a name="--pikachu" class="anchor" href="#--pikachu"><span class="octicon octicon-link"></span></a>- Pikachu</h3>
+
+<h3>
+<a name="--cylinder-and-torus" class="anchor" href="#--cylinder-and-torus"><span class="octicon octicon-link"></span></a>- Cylinder and Torus</h3>
+
+<h2>
+<a name="objective-2-apply-texture-with-uv-mapping-technique" class="anchor" href="#objective-2-apply-texture-with-uv-mapping-technique"><span class="octicon octicon-link"></span></a>Objective 2. Apply texture with UV Mapping technique</h2>
+
+<p>To achieve this, I use barycentric coordinate calculation to figure out each pixel's normal and corresponding UV coordinates based on normals and UV coordinates of its nearby vertex (the three vertex that form the mesh this point is on)</p>
+
+<h3>
+<a name="--fully-rendered-pikachu-note-the-body-is-rounded-and-texture-is-applied-correcly" class="anchor" href="#--fully-rendered-pikachu-note-the-body-is-rounded-and-texture-is-applied-correcly"><span class="octicon octicon-link"></span></a>- Fully rendered Pikachu (Note the body is rounded and texture is applied correcly)</h3>
+
+<h2>
+<a name="objective-3-animate-the-scene" class="anchor" href="#objective-3-animate-the-scene"><span class="octicon octicon-link"></span></a>Objective 3. Animate the scene</h2>
+
+<p>Total of 242 images are rendered to achieve this. More images can be generated if more time given to generate a smoother animation.</p>
+
+<h3>
+<a name="--game-screenshot" class="anchor" href="#--game-screenshot"><span class="octicon octicon-link"></span></a>- Game screenshot</h3>
+
+<h2>
+<a name="objective-5-anti-aliasing-with-supersampling" class="anchor" href="#objective-5-anti-aliasing-with-supersampling"><span class="octicon octicon-link"></span></a>Objective 5. Anti-aliasing with supersampling</h2>
+
+<p>By shooting multiple rays to collect colour info for a pixel instead of one ray, anti-aliasing can be easily achieved.</p>
+
+<h2>
+<a name="objective-4-cooperate-sound-in-the-game" class="anchor" href="#objective-4-cooperate-sound-in-the-game"><span class="octicon octicon-link"></span></a>Objective 4. Cooperate sound in the game</h2>
+
+<p>When the player gains a score or loses one, it will play sound before the animation starts.</p>
+
+<h2>
+<a name="objective-6-photon-mapping-to-illuminate-the-game-character" class="anchor" href="#objective-6-photon-mapping-to-illuminate-the-game-character"><span class="octicon octicon-link"></span></a>Objective 6. Photon mapping to illuminate the game character</h2>
+
+<p>Before ray tracing, I apply photon mapping to light up the character if the collision point is closer to one Pikachu:</p>
+
+<h2>
+<a name="objective-7-achieve-soft-shadow-with-the-help-of-photon-mapping" class="anchor" href="#objective-7-achieve-soft-shadow-with-the-help-of-photon-mapping"><span class="octicon octicon-link"></span></a>Objective 7. Achieve soft shadow with the help of Photon mapping</h2>
+
+<p>Once enough photons are generated and apply to the scene correctly, we can immediately notice the soft shadow compared to hard shadow applied by external light source</p>
+
+<h2>
+<a name="objective-8-glossy-reflection" class="anchor" href="#objective-8-glossy-reflection"><span class="octicon octicon-link"></span></a>Objective 8: Glossy Reflection</h2>
+
+<p>When a ray is about to be reflected, instead of sending one ray for the reflection colour, multiple ones are sent using a cos-weighted distribution function to collect an area of colour (e=1000). By doing this we can achieve glossy surface:</p>
+
+<h2>
+<a name="game-overview" class="anchor" href="#game-overview"><span class="octicon octicon-link"></span></a>Game overview</h2>
+
+<p>The game is now replaced with a new, dynamic battle scene as shown below. The collision point will move as the player wins or loses score</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">CS488 Project - Animated Battle Scene maintained by <a href="https://github.com/gyfelton">gyfelton</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
