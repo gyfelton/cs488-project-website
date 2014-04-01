@@ -34,17 +34,18 @@
         <h1>
 <a name="animated-battle-scene-for-my-ipad-game" class="anchor" href="#animated-battle-scene-for-my-ipad-game"><span class="octicon octicon-link"></span></a>Animated Battle Scene for my iPad game</h1>
 
-<p>This project focuses on using a ray tracer to generate a series of images to animate a battle scene for my iPad game <a href="http://gyfelton.github.io/iPad-LearnEverything">"Dragon Match"</a>.
+<p>This project focuses on using a ray tracer to generate a series of images to animate a battle scene for my iPad game <a href="http://gyfelton.github.io/iPad-LearnEverything">"Dragon Match!"</a>. After this change the game should be renamed to "Pikachu Duel!" :)
 Additional objectives are also included and explained below:</p>
 
 <h2>
-<a name="objective-1-model-the-scene-with-a-character-and-other-primitives-such-as-cylinder-and-torus" class="anchor" href="#objective-1-model-the-scene-with-a-character-and-other-primitives-such-as-cylinder-and-torus"><span class="octicon octicon-link"></span></a>Objective 1. Model the scene with a character and other primitives, such as cylinder and torus</h2>
+<a name="objective-1-model-the-scene" class="anchor" href="#objective-1-model-the-scene"><span class="octicon octicon-link"></span></a>Objective 1. Model the scene</h2>
 
-<h3>
-<a name="--pikachu" class="anchor" href="#--pikachu"><span class="octicon octicon-link"></span></a>- Pikachu</h3>
+<p>With advanced primitives, such as cylinder and torus</p>
 
 <h3>
 <a name="--cylinder-and-torus" class="anchor" href="#--cylinder-and-torus"><span class="octicon octicon-link"></span></a>- Cylinder and Torus</h3>
+
+<p><img src="https://raw.githubusercontent.com/gyfelton/cs488-project-website/gh-pages/images/1_primitives.png" alt="cylinder and torus"></p>
 
 <h2>
 <a name="objective-2-apply-texture-with-uv-mapping-technique" class="anchor" href="#objective-2-apply-texture-with-uv-mapping-technique"><span class="octicon octicon-link"></span></a>Objective 2. Apply texture with UV Mapping technique</h2>
@@ -52,23 +53,35 @@ Additional objectives are also included and explained below:</p>
 <p>To achieve this, I use barycentric coordinate calculation to figure out each pixel's normal and corresponding UV coordinates based on normals and UV coordinates of its nearby vertex (the three vertex that form the mesh this point is on)</p>
 
 <h3>
-<a name="--fully-rendered-pikachu-note-the-body-is-rounded-and-texture-is-applied-correcly" class="anchor" href="#--fully-rendered-pikachu-note-the-body-is-rounded-and-texture-is-applied-correcly"><span class="octicon octicon-link"></span></a>- Fully rendered Pikachu (Note the body is rounded and texture is applied correcly)</h3>
+<a name="--fully-rendered-pikachu" class="anchor" href="#--fully-rendered-pikachu"><span class="octicon octicon-link"></span></a>- Fully rendered Pikachu</h3>
+
+<p>(Note the body is rounded and texture is applied correctly)</p>
+
+<p><img src="https://raw.githubusercontent.com/gyfelton/cs488-project-website/gh-pages/images/2_pikachu.png" alt="pikachu"></p>
 
 <h2>
 <a name="objective-3-animate-the-scene" class="anchor" href="#objective-3-animate-the-scene"><span class="octicon octicon-link"></span></a>Objective 3. Animate the scene</h2>
 
 <p>Total of 242 images are rendered to achieve this. More images can be generated if more time given to generate a smoother animation.</p>
 
-<h3>
-<a name="--game-screenshot" class="anchor" href="#--game-screenshot"><span class="octicon octicon-link"></span></a>- Game screenshot</h3>
+<p>Download the game at <a href="http://gyfelton.github.io/iPad-LearnEverything">"Dragon Match!"</a> to experience the animation.</p>
 
 <h2>
-<a name="objective-5-anti-aliasing-with-supersampling" class="anchor" href="#objective-5-anti-aliasing-with-supersampling"><span class="octicon octicon-link"></span></a>Objective 5. Anti-aliasing with supersampling</h2>
+<a name="objective-4-anti-aliasing-with-supersampling" class="anchor" href="#objective-4-anti-aliasing-with-supersampling"><span class="octicon octicon-link"></span></a>Objective 4. Anti-aliasing with supersampling</h2>
 
 <p>By shooting multiple rays to collect colour info for a pixel instead of one ray, anti-aliasing can be easily achieved.</p>
 
+<p><img src="https://raw.githubusercontent.com/gyfelton/cs488-project-website/gh-pages/images/nonhier_noanti.png" alt="no anti-alising">
+no anti-alising</p>
+
+<p><img src="https://raw.githubusercontent.com/gyfelton/cs488-project-website/gh-pages/images/nonhier_4x.png" alt="4x anti-alising">
+4x anti-alising</p>
+
+<p><img src="https://raw.githubusercontent.com/gyfelton/cs488-project-website/gh-pages/images/nonhier16x.png" alt="16x anti-alising">
+16x anti-alising</p>
+
 <h2>
-<a name="objective-4-cooperate-sound-in-the-game" class="anchor" href="#objective-4-cooperate-sound-in-the-game"><span class="octicon octicon-link"></span></a>Objective 4. Cooperate sound in the game</h2>
+<a name="objective-5-cooperate-sound-in-the-game" class="anchor" href="#objective-5-cooperate-sound-in-the-game"><span class="octicon octicon-link"></span></a>Objective 5. Cooperate sound in the game</h2>
 
 <p>When the player gains a score or loses one, it will play sound before the animation starts.</p>
 
@@ -77,15 +90,39 @@ Additional objectives are also included and explained below:</p>
 
 <p>Before ray tracing, I apply photon mapping to light up the character if the collision point is closer to one Pikachu:</p>
 
+<p><img src="https://raw.githubusercontent.com/gyfelton/cs488-project-website/gh-pages/images/6_no_photon_mapping.png" alt="no_photon_mapping_scene"></p>
+
+<p>Without Photon Mapping</p>
+
+<p><img src="https://raw.githubusercontent.com/gyfelton/cs488-project-website/gh-pages/images/6_with_photon_mapping.png" alt="with_photon_mapping_scene"></p>
+
+<p>With Photon Mapping, note the head of left Pikachu is lighten up because of the photon mapping.</p>
+
 <h2>
 <a name="objective-7-achieve-soft-shadow-with-the-help-of-photon-mapping" class="anchor" href="#objective-7-achieve-soft-shadow-with-the-help-of-photon-mapping"><span class="octicon octicon-link"></span></a>Objective 7. Achieve soft shadow with the help of Photon mapping</h2>
 
-<p>Once enough photons are generated and apply to the scene correctly, we can immediately notice the soft shadow compared to hard shadow applied by external light source</p>
+<p>Once enough photons are generated and apply to the scene correctly, we can immediately notice the soft shadow compared to hard shadow applied by external point light source.</p>
+
+<p><img src="https://raw.githubusercontent.com/gyfelton/cs488-project-website/gh-pages/images/photon_map_low.png" alt="low_resolution"></p>
+
+<p>Photon-mapped scene with low number of photons (around 10 thousand)</p>
+
+<p><img src="https://raw.githubusercontent.com/gyfelton/cs488-project-website/gh-pages/images/photon_map_no_reflection.png" alt="high_resolution_no_reflection"></p>
+
+<p>Photon-mapped scene with high number of photons, but no reflection (around 500 thousand)</p>
+
+<p><img src="https://raw.githubusercontent.com/gyfelton/cs488-project-website/gh-pages/images/photon_map_final_high.png" alt="high_resolution_with_reflection"></p>
+
+<p>Photon-mapped scene with high number of photons and reflection (around 500 thousand)</p>
 
 <h2>
 <a name="objective-8-glossy-reflection" class="anchor" href="#objective-8-glossy-reflection"><span class="octicon octicon-link"></span></a>Objective 8: Glossy Reflection</h2>
 
 <p>When a ray is about to be reflected, instead of sending one ray for the reflection colour, multiple ones are sent using a cos-weighted distribution function to collect an area of colour (e=1000). By doing this we can achieve glossy surface:</p>
+
+<p><img src="https://raw.githubusercontent.com/gyfelton/cs488-project-website/gh-pages/images/photon_map_glossy.png" alt="high_resolution_with_glossy_reflection"></p>
+
+<p>Photon-mapped scene with high number of photons and glossy reflection</p>
 
 <h2>
 <a name="game-overview" class="anchor" href="#game-overview"><span class="octicon octicon-link"></span></a>Game overview</h2>
